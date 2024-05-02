@@ -1,0 +1,24 @@
+﻿<Window x:Class="RemoteTools.Presentation.WPF.MainWindow"
+        xmlns:tb="http://www.hardcodet.net/taskbar" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RemoteTools.Presentation.WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" WindowStyle="None">
+
+    <!--<Grid>
+
+        <Image Source="images/Gartoon-Team-Gartoon-Apps-Gnome-remote-shell.1024.png"/>-->
+
+        <tb:TaskbarIcon x:Name="myNotifyIcon"
+                    Visibility="Visible"
+                    IconSource="/images/Gartoon-Team-Gartoon-Apps-Gnome-remote-shell.ico"
+                    ToolTipText="CPRemote"
+                        MenuActivation="LeftOrRightClick"
+                        PopupActivation="DoubleClick"
+      />
+
+    <!--</Grid>-->
+</Window>

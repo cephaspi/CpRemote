@@ -1,6 +1,6 @@
 ﻿using Serilog;
 using System;
-using System.Collections.Generic;
+ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -20,7 +20,7 @@ namespace RemoteTools.Presentation.WinForms
 
         private void treeView1_MouseClick(object sender, MouseEventArgs e)
         {
-            treeViewConnections.ContextMenuStrip = contextMenuStripConnectionTreeView;
+            treeViewConnections.ContextMenuStrip = contextMenuStrip_ConnectionTreeView;
         }
 
         private void cMenuAddConnection_Click(object sender, EventArgs e)
@@ -43,7 +43,25 @@ namespace RemoteTools.Presentation.WinForms
         {
             Location = Properties.Settings.Default.MainForm_position;
             Size = Properties.Settings.Default.Main_Form_size;
+        }
+        private void notifyIcon_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Right) return;
 
+            var mi = typeof(NotifyIcon).GetMethod("ShowContextMenu",
+                System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic);
+            if (mi != null) mi.Invoke(notifyIcon, null);
+        }
+
+        private void toolStripMenuItem_Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void toolStripMenuItem_Settings_Click(object sender, EventArgs e)
+        {
+            var setForm = new SettingsForm();
+            setForm.ShowDialog();
         }
     }
 }
