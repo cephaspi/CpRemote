@@ -5,20 +5,30 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RemoteTools.Presentation.WPF"
+        xmlns:rs="clr-namespace:RemoteTools.Presentation.WPF.Properties"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" WindowStyle="None">
+        Title="MainWindow" Height="450" Width="800" WindowStyle="None" Background="#7FFFFFFF" AllowsTransparency="True">
 
-    <!--<Grid>
+    <Grid>
 
-        <Image Source="images/Gartoon-Team-Gartoon-Apps-Gnome-remote-shell.1024.png"/>-->
-
+        <!--<Image Source="images/Gartoon-Team-Gartoon-Apps-Gnome-remote-shell.1024.png"/>-->
         <tb:TaskbarIcon x:Name="myNotifyIcon"
                     Visibility="Visible"
-                    IconSource="/images/Gartoon-Team-Gartoon-Apps-Gnome-remote-shell.ico"
-                    ToolTipText="CPRemote"
-                        MenuActivation="LeftOrRightClick"
-                        PopupActivation="DoubleClick"
-      />
+                    ToolTipText="Fallback ToolTip for Windows xp"
+                    IconSource="images/Gartoon-Team-Gartoon-Apps-Gnome-remote-shell.ico"
+                    MenuActivation="LeftOrRightClick"
+                    PopupActivation="DoubleClick">
+            <tb:TaskbarIcon.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="{x:Static rs:Resources.GUI_TrayIcon_Settings}"/>
+                    <Separator/>
+                    <MenuItem Header="{x:Static rs:Resources.GUI_TrayIcon_Exit}" Click="MenuItem_Click"/>
 
-    <!--</Grid>-->
+                </ContextMenu>
+            </tb:TaskbarIcon.ContextMenu>
+        </tb:TaskbarIcon>
+
+        <Button Content="{x:Static rs:Resources.GUI_TrayIcon_Settings}" HorizontalAlignment="Left" Height="76" Margin="269,149,0,0" VerticalAlignment="Top" Width="209" Click="Button_Click"/>
+
+    </Grid>
 </Window>

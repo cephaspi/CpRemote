@@ -4,22 +4,96 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="images\Gartoon-Team-Gartoon-Apps-Gnome-remote-shell.1024.png" />
+    <None Remove="images\Gartoon-Team-Gartoon-Apps-Gnome-remote-shell.128.png" />
+    <None Remove="images\Gartoon-Team-Gartoon-Apps-Gnome-remote-shell.16.png" />
+    <None Remove="images\Gartoon-Team-Gartoon-Apps-Gnome-remote-shell.24.png" />
+    <None Remove="images\Gartoon-Team-Gartoon-Apps-Gnome-remote-shell.256.png" />
+    <None Remove="images\Gartoon-Team-Gartoon-Apps-Gnome-remote-shell.32.png" />
+    <None Remove="images\Gartoon-Team-Gartoon-Apps-Gnome-remote-shell.48.png" />
+    <None Remove="images\Gartoon-Team-Gartoon-Apps-Gnome-remote-shell.512.png" />
+    <None Remove="images\Gartoon-Team-Gartoon-Apps-Gnome-remote-shell.64.png" />
+    <None Remove="images\Gartoon-Team-Gartoon-Apps-Gnome-remote-shell.ico" />
+    <None Remove="images\Gartoon-Team-Gartoon-Apps-Gnome-remote-shell.svg" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="images\Gartoon-Team-Gartoon-Apps-Gnome-remote-shell.1024.png">
+    <Resource Include="images\Gartoon-Team-Gartoon-Apps-Gnome-remote-shell.1024.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.1.0" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="5.0.1" />
+    <PackageReference Include="Serilog.Sinks.Debug" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="images\Gartoon-Team-Gartoon-Apps-Gnome-remote-shell.128.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\Gartoon-Team-Gartoon-Apps-Gnome-remote-shell.16.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\Gartoon-Team-Gartoon-Apps-Gnome-remote-shell.24.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\Gartoon-Team-Gartoon-Apps-Gnome-remote-shell.256.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\Gartoon-Team-Gartoon-Apps-Gnome-remote-shell.32.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\Gartoon-Team-Gartoon-Apps-Gnome-remote-shell.48.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\Gartoon-Team-Gartoon-Apps-Gnome-remote-shell.512.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\Gartoon-Team-Gartoon-Apps-Gnome-remote-shell.64.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\Gartoon-Team-Gartoon-Apps-Gnome-remote-shell.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\Gartoon-Team-Gartoon-Apps-Gnome-remote-shell.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Properties\Resources.sk-SK.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
 </Project>
